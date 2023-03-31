@@ -19,7 +19,7 @@ export function registerPage(ctx) {
     // TODO Change user objects {email, password}, based on requirements
     async function onRegister({email, password, repass}, form) {
         // Validation for empty fields
-        if (email == '', password == '', repass == '') {
+        if (email == '' || password == '' || repass == '') {
             return alert('All fields are required!');
         }
 

@@ -18,7 +18,7 @@ export function loginPage(ctx) {
     // TODO Change user objects {email, password}, based on requirements
     async function onLogin({email, password}, form) {
         // Validation for empty fields
-        if (email == '', password == '') {
+        if (email == '' || password == '') {
             return alert('All fields are required!');
         }
 

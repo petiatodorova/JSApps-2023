@@ -3,7 +3,7 @@ import { clearUserData, getUserData } from '../util.js';
 const host = 'http://localhost:3030';
 
 async function request(method, url, data) {
-    const optiions = {
+    const options = {
         method,
         headers: {}
     };
@@ -11,16 +11,16 @@ async function request(method, url, data) {
     const userData = getUserData();
     if (userData) {
         const token = userData.accessToken;
-        optiions.headers['X-Authorization'] = token;
+        options.headers['X-Authorization'] = token;
     }
 
     if (data !== undefined) {
-        optiions.headers['Content-Type'] = 'application/json';
-        optiions.body = JSON.stringify(data);
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(data);
     }
 
     try {
-        const response = await fetch(host + url, optiions);
+        const response = await fetch(host + url, options);
 
         let result;
         if (response.status != 204) {
