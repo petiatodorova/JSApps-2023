@@ -7,10 +7,11 @@ import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
 import { logout } from './data/auth.js';
 import { catalogPage } from './views/catalog.js';
+import { detailsPage } from './views/details.js';
 
 
 // TODO change render root depending on project HTML structure
-const root = document.body;
+const root = document.getElementById('wrapper');
 
 // Routes links
 page(decorateContext);
@@ -20,6 +21,7 @@ page('/login', loginPage);
 page('/register', registerPage);
 page('/logout', logoutAction);
 page('/catalog', catalogPage);
+page('/catalog/:id', detailsPage);
 
 page.start();
 
