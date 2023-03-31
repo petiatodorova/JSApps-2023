@@ -8,12 +8,14 @@ import { registerPage } from './views/register.js';
 import { logout } from './data/auth.js';
 import { catalogPage } from './views/catalog.js';
 import { detailsPage } from './views/details.js';
+import { createPage } from './views/create.js';
+import { editPage } from './views/edit.js';
 
 
 // TODO change render root depending on project HTML structure
 const root = document.getElementById('wrapper');
 
-// Routes links
+// Pages links
 page(decorateContext);
 page('index.html', '/');
 page('/', homePage);
@@ -22,6 +24,8 @@ page('/register', registerPage);
 page('/logout', logoutAction);
 page('/catalog', catalogPage);
 page('/catalog/:id', detailsPage);
+page('/create', createPage);
+page('/catalog/:id/edit', editPage);
 
 page.start();
 

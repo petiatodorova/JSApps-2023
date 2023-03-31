@@ -62,4 +62,4 @@ export async function detailsPage(ctx) {
             ctx.page.redirect('/catalog');
         }
     }
-}
+} 
